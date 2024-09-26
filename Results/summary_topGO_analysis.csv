@@ -1,0 +1,51 @@
+GO.ID,Term,Annotated,Significant,Expected,weightFisher,p.adj
+GO:0051607,defense response to virus,311,39,1.45,3.6e-28,0
+GO:0045071,negative regulation of viral genome repl...,54,15,0.25,2.4e-23,0
+GO:0140374,antiviral innate immune response,51,10,0.24,3.2e-14,0
+GO:0042742,defense response to bacterium,309,12,1.44,2.9e-10,0
+GO:0035455,response to interferon-alpha,20,6,0.09,4.6e-10,0
+GO:0035456,response to interferon-beta,33,7,0.15,1.3e-08,0
+GO:0070106,interleukin-27-mediated signaling pathwa...,7,4,0.03,1.5e-08,0
+GO:0032728,positive regulation of interferon-beta p...,42,6,0.2,4.0e-08,1e-04
+GO:0071222,cellular response to lipopolysaccharide,214,10,1,4.7e-08,1e-04
+GO:0060339,negative regulation of type I interferon...,23,5,0.11,6.2e-08,1e-04
+GO:0071346,cellular response to type II interferon,123,8,0.57,3.0e-07,4e-04
+GO:0002230,positive regulation of defense response ...,35,5,0.16,5.7e-07,7e-04
+GO:0060337,type I interferon-mediated signaling pat...,82,10,0.38,6.7e-07,8e-04
+GO:0140639,positive regulation of pyroptosis,5,3,0.02,9.7e-07,0.0011
+GO:0032020,ISG15-protein conjugation,6,3,0.03,1.9e-06,0.0018
+GO:0051715,cytolysis in another organism,6,3,0.03,1.9e-06,0.0018
+GO:0045087,innate immune response,956,45,4.46,4.9e-06,0.0045
+GO:0140970,AIM2 inflammasome complex assembly,5,3,0.02,2.1e-05,0.0179
+GO:0019060,intracellular transport of viral protein...,2,2,0.01,2.2e-05,0.0179
+GO:0070098,chemokine-mediated signaling pathway,87,5,0.41,5.4e-05,0.0417
+GO:0071659,negative regulation of IP-10 production,3,2,0.01,6.4e-05,0.0471
+GO:0071360,cellular response to exogenous dsRNA,18,3,0.08,7.6e-05,0.0534
+GO:0034341,response to type II interferon,145,11,0.68,0.00011,0.0708
+GO:0032760,positive regulation of tumor necrosis fa...,101,5,0.47,0.00011,0.0708
+GO:0039530,MDA-5 signaling pathway,11,3,0.05,0.00013,0.0772
+GO:2000342,negative regulation of chemokine (C-X-C ...,4,2,0.02,0.00013,0.0772
+GO:0002221,pattern recognition receptor signaling p...,251,14,1.17,0.00016,0.0915
+GO:0032731,positive regulation of interleukin-1 bet...,60,4,0.28,0.00018,0.0993
+GO:0034344,regulation of type III interferon produc...,5,2,0.02,0.00021,0.1119
+GO:0035458,cellular response to interferon-beta,26,3,0.12,0.00024,0.1236
+GO:0006954,inflammatory response,822,19,3.83,0.00025,0.1246
+GO:0006955,immune response,1948,55,9.08,0.00026,0.1255
+GO:0051092,positive regulation of NF-kappaB transcr...,123,5,0.57,0.00028,0.1311
+GO:0030593,neutrophil chemotaxis,103,5,0.48,0.00031,0.1408
+GO:0009597,detection of virus,6,2,0.03,0.00032,0.1412
+GO:0070269,pyroptosis,35,6,0.16,0.00033,0.1416
+GO:0071347,cellular response to interleukin-1,103,5,0.48,0.00040,0.1658
+GO:0039529,RIG-I signaling pathway,28,4,0.13,0.00043,0.1658
+GO:0060760,positive regulation of response to cytok...,66,4,0.31,0.00043,0.1658
+GO:0043123,positive regulation of canonical NF-kapp...,208,6,0.97,0.00043,0.1658
+GO:0060700,regulation of ribonuclease activity,7,2,0.03,0.00044,0.1658
+GO:0098586,cellular response to virus,77,4,0.36,0.00046,0.1692
+GO:0009615,response to virus,404,42,1.88,0.00058,0.2071
+GO:0032741,positive regulation of interleukin-18 pr...,8,2,0.04,0.00059,0.2071
+GO:0035563,positive regulation of chromatin binding,9,2,0.04,0.00076,0.2609
+GO:0009617,response to bacterium,702,25,3.27,0.00079,0.2653
+GO:0007267,cell-cell signaling,1694,14,7.9,0.00083,0.2728
+GO:0006511,ubiquitin-dependent protein catabolic pr...,591,8,2.76,0.00085,0.2735
+GO:0002376,immune system process,2723,60,12.7,0.00109,0.3436
+GO:1900246,positive regulation of RIG-I signaling p...,11,2,0.05,0.00115,0.3553

@@ -1,0 +1,64 @@
+library(stats)
+library(dplyr)
+library(DESeq2)
+library(tidyverse)
+library(data.table)
+library(devtools)
+
+#Load and separate gene data
+df <- readr::read_csv("SRP192714_Hugo.csv")
+df_data <- df[3:1023]
+df_labels <- df[1:2]
+df_rounded <- round(df_data, 0)
+
+#Load and trim metadata
+df_meta <- readr::read_tsv("metadata_SRP192714.tsv")
+df_meta <- df_meta[c("refinebio_accession_code", "refinebio_time")]
+df_meta <- df_meta %>%
+  dplyr::mutate(
+    refinebio_time = factor(refinebio_time, levels=c("early acute", "late acute", "convalescent"))
+  )
+
+#Create DESeq object and run transformation
+dds <- DESeqDataSetFromMatrix(
+  countData = df_rounded,
+  colData = df_meta,
+  design = ~refinebio_time
+)
+dds <- DESeq(dds)
+deseq_results <- results(dds)
+
+#Apply log fold change to the results
+deseq_results <- lfcShrink(
+  dds,
+  coef = 3,  # Coefficient for the group comparison of interest
+  res = deseq_results,
+  type = "normal"  # Use 'normal' shrinkage instead of 'apeglm'
+)
+
+#Filter by p-value and logfc
+alpha <- 0.05  # Adjusted p-value threshold
+log2fc_cutoff <- 1  # Log2 fold change threshold
+
+deseq_results$Hugo <- df_labels[2]
+deseq_results <- as.data.frame(deseq_results) %>%
+  rownames_to_column(var="Gene") %>%
+  filter(padj < alpha & abs(log2FoldChange) > log2fc_cutoff)
+
+#Filter orignal data and split by infection time
+sample_df <- setDT(data.frame(t(data.frame(assay(dds)))))
+filter <- as.numeric(unlist(deseq_results[1]))
+sample_df <- sample_df[,filter,with = FALSE]
+sample_df <- as.data.frame(t(sample_df))
+split_sample_df <- split(sample_df, df_meta$refinebio_time)
+
+#Generate sample per category
+set.seed(52)
+early_acute_sample <- unlist(sample(split_sample_df$`early acute`, 1), use.names = FALSE)
+late_acute_sample <- unlist(sample(split_sample_df$`late acute`, 1), use.names = FALSE)
+convalescent_sample <- unlist(sample(split_sample_df$convalescent, 1), use.names = FALSE)
+
+#Run test for each sample
+wilcox.test(early_acute_sample, late_acute_sample)
+wilcox.test(early_acute_sample, convalescent_sample)
+wilcox.test(late_acute_sample, convalescent_sample)

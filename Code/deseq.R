@@ -68,4 +68,3 @@ pheatmap(
   main = "Non-Annotated Heatmap",
   scale = "row" # Scale values in the direction of genes (rows)
 )
-`

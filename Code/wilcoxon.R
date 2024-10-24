@@ -53,8 +53,8 @@ sample_df <- as.data.frame(t(sample_df))
 split_sample_df <- split(sample_df, df_meta$refinebio_time)
 
 #Generate sample per category
-set.seed(52)
-early_acute_sample <- unlist(sample(split_sample_df$`early acute`, 1), use.names = FALSE)
+set.seed(123)
+early_acute_sample <- unlist(sample(split_sample_df$`early acute`,1), use.names = FALSE)
 late_acute_sample <- unlist(sample(split_sample_df$`late acute`, 1), use.names = FALSE)
 convalescent_sample <- unlist(sample(split_sample_df$convalescent, 1), use.names = FALSE)
 
